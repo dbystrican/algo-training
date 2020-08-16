@@ -1,4 +1,4 @@
-package com.learning;
+package com.learning.recursion;
 
 import com.learning.recursion.*;
 
@@ -25,6 +25,10 @@ public class Main {
         System.out.println("Binary value of "+num1+" is "+ BinaryConverter.toBinaryOptimized(num1,"")+" with recursion with helping parameter");
         //Forth exercise
         new TriangleCarpetFrame();
+        //fifth exercise
+        System.out.println("Greatest common divisor of "+36+" and "+ 12+ " is " + EuclidGreaterCommonDivisor.greatestCommonDivisor(36,12));
+        System.out.println("Greatest common divisor of "+10+" and "+ 4+ " is " + EuclidGreaterCommonDivisor.greatestCommonDivisor(10,4));
+        System.out.println("Greatest common divisor of "+13+" and "+ 7+ " is " + EuclidGreaterCommonDivisor.greatestCommonDivisor(13,7));
         //sixt exercise
         int num2 = 2;
         System.out.println("recursive factorial of "+num2 +" is "+ Factorial.recursiveFactorial(num2));
