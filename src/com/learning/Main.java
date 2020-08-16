@@ -24,7 +24,7 @@ public class Main {
         System.out.println("Binary value of "+num1+" is "+ BinaryConverter.toBinary(num1)+" with direct recursion");
         System.out.println("Binary value of "+num1+" is "+ BinaryConverter.toBinaryOptimized(num1,"")+" with recursion with helping parameter");
         //Forth exercise
-        TriangleCarpet triangleCarpet = new TriangleCarpet();
+        new TriangleCarpetFrame();
         //sixt exercise
         int num2 = 2;
         System.out.println("recursive factorial of "+num2 +" is "+ Factorial.recursiveFactorial(num2));
