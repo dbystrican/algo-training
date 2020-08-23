@@ -1,7 +1,5 @@
 package com.learning.sorting;
 
-import org.jetbrains.annotations.Contract;
-
 public class IntegerSorter {
 
     public static int[] bubbleSort(int[] numbersArray, int from, int to) {
@@ -24,6 +22,21 @@ public class IntegerSorter {
                 j--;
             }
             numbersArray[j] = keyValue;
+        }
+        return numbersArray;
+    }
+
+    public static int[] quickSort(int[] numbersArray, int from, int to) {
+        if (from < to) {
+            int divisionIndex = from;
+            for (int i = from +1; i < to ; i++) {
+                if (numbersArray[i] < numbersArray[from]) {
+                    swap(numbersArray, ++divisionIndex, numbersArray[i]);
+                }
+            }
+            swap(numbersArray, divisionIndex, from);
+            quickSort(numbersArray, from, divisionIndex -1);
+            quickSort(numbersArray, divisionIndex + 1, to);
         }
         return numbersArray;
     }

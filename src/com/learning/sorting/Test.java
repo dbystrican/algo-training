@@ -12,5 +12,7 @@ public class Test {
                 + Arrays.toString(IntegerSorter.bubbleSort(arrayUnsorted, 0, arrayUnsorted.length)));
         System.out.println("Sorted randomly generated array with insertion sort is "
                 + Arrays.toString(IntegerSorter.insertionSort(arrayUnsorted, 0, arrayUnsorted.length)));
+        System.out.println("Sorted randomly generated array with quick sort is "
+                + Arrays.toString(IntegerSorter.quickSort(arrayUnsorted, 0, arrayUnsorted.length)));
     }
 }
