@@ -15,6 +15,19 @@ public class IntegerSorter {
         return numbersArray;
     }
 
+    public static int[] insertionSort(int[] numbersArray, int from, int to) {
+        for (int i = from + 1; i < to; i++) {
+            int keyValue = numbersArray[i];
+            int j = i;
+            while (j > i && numbersArray[j] > keyValue) {
+                numbersArray[j] = numbersArray[j - 1];
+                j--;
+            }
+            numbersArray[j] = keyValue;
+        }
+        return numbersArray;
+    }
+
     private static int[] swap(int[] numbersArray, int num1Index, int num2Index) {
         int temp = numbersArray[num1Index];
         numbersArray[num1Index] = numbersArray[num2Index];
