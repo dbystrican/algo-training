@@ -9,10 +9,10 @@ public class Test {
         System.out.println("Unsorted randomly generated array is "
                 + Arrays.toString(arrayUnsorted));
         System.out.println("Sorted randomly generated array with bubble sort is "
-                + Arrays.toString(IntegerSorter.bubbleSort(arrayUnsorted.clone(), 0, arrayUnsorted.length)));
+                + Arrays.toString(IntegerSorter.bubbleSort(arrayUnsorted.clone(), 0, arrayUnsorted.length )));
         System.out.println("Sorted randomly generated array with insertion sort is "
-                + Arrays.toString(IntegerSorter.insertionSort(arrayUnsorted.clone(), 0, arrayUnsorted.length)));
+                + Arrays.toString(IntegerSorter.insertionSort(arrayUnsorted.clone(), 0, arrayUnsorted.length -1)));
         System.out.println("Sorted randomly generated array with quick sort is "
-                + Arrays.toString(IntegerSorter.quickSort(arrayUnsorted.clone(), 0, arrayUnsorted.length)));
+                + Arrays.toString(IntegerSorter.quickSort(arrayUnsorted.clone(), 0, arrayUnsorted.length -1)));
     }
 }
