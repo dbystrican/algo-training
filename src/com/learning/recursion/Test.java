@@ -4,7 +4,7 @@ import com.learning.recursion.*;
 
 import java.util.Arrays;
 
-public class Main {
+public class Test {
 
     public static void main(String[] args) {
         //first excercise for recursion
