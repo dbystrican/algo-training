@@ -1,5 +1,7 @@
 package com.learning.sorting;
 
+import java.util.Arrays;
+
 public class IntegerSorter {
 
     public static int[] bubbleSort(int[] numbersArray, int from, int to) {
@@ -29,13 +31,13 @@ public class IntegerSorter {
     public static int[] quickSort(int[] numbersArray, int from, int to) {
         if (from < to) {
             int divisionIndex = from;
-            for (int i = from + 1; i <= to ; i++) {
+            for (int i = from + 1; i <= to; i++) {
                 if (numbersArray[i] < numbersArray[from]) {
                     swap(numbersArray, ++divisionIndex, i);
                 }
             }
             swap(numbersArray, from, divisionIndex);
-            quickSort(numbersArray, from, divisionIndex -1);
+            quickSort(numbersArray, from, divisionIndex - 1);
             quickSort(numbersArray, divisionIndex + 1, to);
         }
         return numbersArray;
