@@ -43,9 +43,25 @@ public class IntegerSorter {
         return numbersArray;
     }
 
-    public static int[] coctailSort() {
-
-        return new int[0];
+    public static int[] cocktailSort(int[] numbersArray, int from, int to) {
+        for (int i = from; i <= to; i++) {
+            boolean sorting = false;
+            for (int j = 1; j <= to - i; j++) {
+                if (numbersArray[j - 1] > numbersArray[j]) {
+                    swap(numbersArray, j - 1, j);
+                    sorting = true;
+                }
+            }
+            if(!sorting) break;
+            for (int j = to - i - 1; j > i ; j--) {
+                if (numbersArray[j - 1] > numbersArray[j]) {
+                    swap(numbersArray, j - 1, j);
+                    sorting = true;
+                }
+            }
+            if(!sorting) break;
+        }
+        return numbersArray;
     }
 
     private static void swap(int[] numbersArray, int num1Index, int num2Index) {

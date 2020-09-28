@@ -1,6 +1,5 @@
 package com.learning.sorting;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class Test {
@@ -14,5 +13,7 @@ public class Test {
                 + Arrays.toString(IntegerSorter.insertionSort(arrayUnsorted.clone(), 0, arrayUnsorted.length -1)));
         System.out.println("Sorted randomly generated array with quick sort is "
                 + Arrays.toString(IntegerSorter.quickSort(arrayUnsorted.clone(), 0, arrayUnsorted.length -1)));
+        System.out.println("Sorted randomly generated array with cocktail sort is "
+                + Arrays.toString(IntegerSorter.cocktailSort(arrayUnsorted.clone(), 0, arrayUnsorted.length -1)));
     }
 }
