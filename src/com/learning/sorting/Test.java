@@ -15,5 +15,7 @@ public class Test {
                 + Arrays.toString(IntegerSorter.quickSort(arrayUnsorted.clone(), 0, arrayUnsorted.length -1)));
         System.out.println("Sorted randomly generated array with cocktail sort is "
                 + Arrays.toString(IntegerSorter.cocktailSort(arrayUnsorted.clone(), 0, arrayUnsorted.length -1)));
+        System.out.println("Sorted randomly generated array with merge sort is "
+                + Arrays.toString(IntegerSorter.mergeSort(arrayUnsorted.clone(), 0, arrayUnsorted.length - 1)));
     }
 }

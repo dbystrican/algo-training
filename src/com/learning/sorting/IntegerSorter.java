@@ -1,7 +1,5 @@
 package com.learning.sorting;
 
-import java.util.Arrays;
-
 public class IntegerSorter {
 
     public static int[] bubbleSort(int[] numbersArray, int from, int to) {
@@ -63,6 +61,50 @@ public class IntegerSorter {
         }
         return numbersArray;
     }
+    public static int[] mergeSort(int[] numbersArray, int from, int to){
+
+        if(from<to){
+            int mid = (to + from) / 2;
+            mergeSort(numbersArray, from, mid);
+            mergeSort(numbersArray, mid+1, to);
+            mergeSorted(numbersArray, from, mid, to);
+        }
+
+        return numbersArray;
+    }
+
+    public  static int[] mergeSorted(int[] numbersArray, int from, int mid, int to){
+        int [] tempArr = new int [to - from + 1];
+        int tempArrPointer = 0;
+        int leftPointer = from, rightPointer = mid + 1;
+        while (leftPointer <= mid  && rightPointer <= to ){
+            if(numbersArray[leftPointer] < numbersArray[rightPointer]){
+                tempArr[tempArrPointer] = numbersArray[leftPointer];
+                leftPointer++;
+            }else{
+                tempArr[tempArrPointer] = numbersArray[rightPointer];
+                rightPointer++;
+            }
+            tempArrPointer++;
+        }
+        while (leftPointer <= mid ){
+            tempArr[tempArrPointer] = numbersArray[leftPointer];
+            leftPointer++;
+            tempArrPointer++;
+        }
+        while (rightPointer <= to){
+            tempArr[tempArrPointer] = numbersArray[rightPointer];
+            rightPointer++;
+            tempArrPointer++;
+        }
+
+
+        for(int i = from; i<=to; i++) {
+            numbersArray[i] = tempArr [i-from];
+        }
+        return numbersArray;
+    }
+
 
     private static void swap(int[] numbersArray, int num1Index, int num2Index) {
         int temp = numbersArray[num1Index];
