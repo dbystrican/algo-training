@@ -42,65 +42,67 @@ public class IntegerSorter {
     }
 
     public static int[] cocktailSort(int[] numbersArray, int from, int to) {
-        for (int i = from; i <= to; i++) {
-            boolean sorting = false;
-            for (int j = 1; j <= to - i; j++) {
+        int left = from + 1;
+        int right = to;
+        int change = 0;
+        do {
+            for (int j = left; j <= right; j++) {
                 if (numbersArray[j - 1] > numbersArray[j]) {
                     swap(numbersArray, j - 1, j);
-                    sorting = true;
+                    change = j;
                 }
             }
-            if(!sorting) break;
-            for (int j = to - i - 1; j > i ; j--) {
+            right = change - 1;
+            for (int j = right; j >= left; j--) {
                 if (numbersArray[j - 1] > numbersArray[j]) {
                     swap(numbersArray, j - 1, j);
-                    sorting = true;
+                    change = j;
                 }
             }
-            if(!sorting) break;
-        }
+            left = change + 1;
+        } while (left <= right);
         return numbersArray;
     }
-    public static int[] mergeSort(int[] numbersArray, int from, int to){
 
-        if(from<to){
+    public static int[] mergeSort(int[] numbersArray, int from, int to) {
+        if (from < to) {
             int mid = (to + from) / 2;
             mergeSort(numbersArray, from, mid);
-            mergeSort(numbersArray, mid+1, to);
+            mergeSort(numbersArray, mid + 1, to);
             mergeSorted(numbersArray, from, mid, to);
         }
 
         return numbersArray;
     }
 
-    public  static int[] mergeSorted(int[] numbersArray, int from, int mid, int to){
-        int [] tempArr = new int [to - from + 1];
+    public static int[] mergeSorted(int[] numbersArray, int from, int mid, int to) {
+        int[] tempArr = new int[to - from + 1];
         int tempArrPointer = 0;
         int leftPointer = from, rightPointer = mid + 1;
-        while (leftPointer <= mid  && rightPointer <= to ){
-            if(numbersArray[leftPointer] < numbersArray[rightPointer]){
+        while (leftPointer <= mid && rightPointer <= to) {
+            if (numbersArray[leftPointer] < numbersArray[rightPointer]) {
                 tempArr[tempArrPointer] = numbersArray[leftPointer];
                 leftPointer++;
-            }else{
+            } else {
                 tempArr[tempArrPointer] = numbersArray[rightPointer];
                 rightPointer++;
             }
             tempArrPointer++;
         }
-        while (leftPointer <= mid ){
+        while (leftPointer <= mid) {
             tempArr[tempArrPointer] = numbersArray[leftPointer];
             leftPointer++;
             tempArrPointer++;
         }
-        while (rightPointer <= to){
+        while (rightPointer <= to) {
             tempArr[tempArrPointer] = numbersArray[rightPointer];
             rightPointer++;
             tempArrPointer++;
         }
 
 
-        for(int i = from; i<=to; i++) {
-            numbersArray[i] = tempArr [i-from];
+        for (int i = from; i <= to; i++) {
+            numbersArray[i] = tempArr[i - from];
         }
         return numbersArray;
     }
